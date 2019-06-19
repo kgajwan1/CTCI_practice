@@ -48,5 +48,5 @@ int main()
     for (auto i = g1.crbegin(); i != g1.crend(); ++i) 
         std::cout << *i << " "; 
             printf("\n");
-
+return 0;
 }
