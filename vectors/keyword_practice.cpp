@@ -33,6 +33,10 @@ int main()
     std::cout << *i <<" " ;
     printf("\n");
     
+      g1.shrink_to_fit(); 
+    std::cout << "\nVector elements are: "; 
+    for (auto it = g1.begin(); it != g1.end(); it++) 
+       std::cout << *it << " "; 
     
     return 0; 
     
