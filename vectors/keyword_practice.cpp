@@ -2,13 +2,14 @@
 
 #include <iostream> 
 #include <vector> 
-  
+#include<algorithm>
+#include <bits/stdc++.h> 
 
 int main() 
 { 
     std::vector<int> g1; 
   
-    for (int i = 1; i <= 5; i++) 
+    for (int i = 4; i >= 1; i--) 
         g1.push_back(i); 
     //earlier contents
     std::cout <<"Contents"<<std::endl;
@@ -33,7 +34,9 @@ int main()
     std::cout << *i <<" " ;
     printf("\n");
     
-      g1.shrink_to_fit(); 
+    g1.shrink_to_fit(); 
+    sort(g1.begin(), g1.end());
+    
     std::cout << "\nVector elements are: "; 
     for (auto it = g1.begin(); it != g1.end(); it++) 
        std::cout << *it << " "; 
