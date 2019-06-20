@@ -9,7 +9,6 @@ void push(int *arr, int index, int value, int *size, int *capacity){
           realloc(arr, sizeof(arr) * 2);
           *capacity = sizeof(arr) * 2;
      }
-
      arr[index] = value;
      *size = *size + 1;
 }
