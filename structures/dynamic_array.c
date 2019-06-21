@@ -35,10 +35,15 @@ int main()
     Array a;
     int i;
 
-    initArray(&a, 5);  // initially 5 elements
-    for (i = 0; i < 100; i++)
-        insertArray(&a, i);  
-        printf("%d\n", a.array[19]);  
+    initArray(&a, 1);  // initially 0 elements
+    printf("%d\n",sizeof(a));
+    //for (i = 0; i < 500; i++)
+        insertArray(&a, 1); 
+        insertArray(&a,20);
+        insertArray(&a,30);
+
+        // automatically resizes as necessary
+        //printf("%d\n", a.array[19]);  // print 10th element
     printf("%d\n", a.used);  // print number of elements
     freeArray(&a);
     
