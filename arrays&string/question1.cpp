@@ -47,7 +47,24 @@ bool isUniquebitvec(std::string str)
 		}
 return true;
 }
-
+bool isUniquebitvecbook_method(std::string str)
+{
+ if(str.length() > 256)
+    {
+        return false;
+    }
+    	int checker=0;
+		for (int i = 0; i < str.length(); i++){
+			int val = str[i]-'a';
+            //if bit is already set to 1
+			if ((checker & (1<<val)) >0)
+            {
+				return false;
+			}
+			checker |=(1<<val);
+		}
+return true;
+}
 bool isUniqueNoDS(std::string str)
 {
     std::sort(str.begin(),str.end());
@@ -69,6 +86,7 @@ int main()
    //std::boolalpha converts 0 and 1 to false and true respectively
     	std::cout << str << " : " << std::boolalpha << isUnique(str) <<std::endl;
         //std::cout << str2 << " : " << std::boolalpha << isUnique(str2) <<std::endl;
+	std::cout << str << " : " << std::boolalpha << isUniquebitvecbook_method(str) <<std::endl;
         std::cout << str << " : " << std::boolalpha << isUniquebitvec(str) <<std::endl;
         std::cout << str << " : " << std::boolalpha << isUniqueNoDS(str) <<std::endl;
 }
