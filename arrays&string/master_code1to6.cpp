@@ -285,6 +285,19 @@ std::string stringcompress(std::string str)
     }
     return str;
 }
+
+bool isRotation(std::string s1, std::string s2){
+    int len = s1.length();
+    /*check if length of s1 and s2 aer same or not */
+    if(len == s2.length() && len >0){
+        std::string s1s1 = s1 + s1;
+        if ( s1s1.find(s2) != std::string::npos ) {
+		return true;
+	} 
+    }
+    return false;
+}
+
 int main()
 {
     std::string s1 = "nachos";
@@ -323,5 +336,6 @@ int main()
 	} else {
 		std::cout << str << " can not be compressed\n";
 	}
-
+    //Q9
+    std::cout <<s2<<" is rotation of " << s3 <<std::boolalpha<<isRotation(s2,s3);
 }
