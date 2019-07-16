@@ -138,7 +138,7 @@ int main()
   }        
   std::cout << "5th node from last (Recursive) : ";
   Node *node5 = kthToLastRecursive(head, 5);
-  if ( node4 != nullptr ) {
+  if ( node5 != nullptr ) {
     std::cout << node5->data << std::endl;
   } else {
     std::cout << "NULL NODE\n";
