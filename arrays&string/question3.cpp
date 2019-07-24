@@ -5,8 +5,7 @@
  * Preferebly in place
  */
 
-#include <iostream>
-#include <cstring>
+#include<bits/stdc++.h>
 
 /*
  * Function : urlify
@@ -41,11 +40,25 @@ void urlify(char *str, int len)
         }
     }
 }
+//using inbuilt libraries
+//you 
+std::string urLify2(char *str)
+{
+
+        const auto target = std::regex{ " " };
+        const auto replacement = std::string{ "%20" };
+        
+        return std::regex_replace( str, target, replacement ) ;
+}
 
 int main()
 {
     char str[] = "Mr John Smith    ";
+    char str21[] = "Mr Delicious Nachos";
      std::cout << "Actual string   : " << str << std::endl;
      urlify(str,13);
-     std::cout << "modified string   : " << str << std::endl;
+     std::cout << "modified string way 1   : " << str << std::endl;
+     std::string str2 = urLify2(str21);
+     std::cout << "modified string way 2  : " << str2 << std::endl;
+
 }
